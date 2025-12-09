@@ -1,0 +1,124 @@
+/* Загальні стилі для фону сторінки */
+body {
+    background-color: #2c3e50; /* Темно-синій фон для зимової ночі */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Ховаємо можливий скрол через анімації */
+}
+
+/* BLOCK: card */
+.card {
+    box-sizing: border-box;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #333;
+    border: 3px solid #e74c3c; /* Різдвяний червоний контур */
+    position: relative;
+    z-index: 1;
+}
+
+/* BLOCK: christmas-decoration (Фон картки) */
+/* Використовуємо лінійний градієнт для імітації різдвяних кольорів */
+.christmas-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1abc9c 0%, #2ecc71 50%, #16a085 100%); /* Зелений градієнт ялинки */
+    opacity: 0.15; /* Напівпрозорий, щоб текст було видно */
+    border-radius: 12px;
+    z-index: -1; /* Відправляємо на задній план */
+}
+
+/* ELEMENT: card__header */
+.card__header {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c0392b;
+}
+
+/* ELEMENT: card__title */
+.card__title {
+    color: #e74c3c; /* Червоний колір для головного напису */
+    font-size: 2.8rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ELEMENT: card__subtitle */
+.card__subtitle {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* ELEMENT: card__decoration */
+.card__decoration {
+    position: absolute;
+    font-size: 2rem;
+    /* Додаємо невелике мерехтіння для зірочок */
+    animation: twinkle 1s infinite alternate;
+}
+
+/* MODIFIER: card__decoration--star */
+.card__decoration--star {
+    top: -15px;
+    right: -15px;
+    color: #f1c40f; /* Золота зірка */
+}
+
+/* MODIFIER: card__decoration--tree */
+.card__decoration--tree {
+    top: -15px;
+    left: -15px;
+    color: #27ae60; /* Зелена ялинка */
+    animation-delay: 0.5s;
+}
+
+/* ELEMENT: card__body */
+.card__body {
+    padding: 30px 0;
+}
+
+/* ELEMENT: card__message */
+.card__message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* MODIFIER: card__message--highlight */
+.card__message--highlight {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+/* ELEMENT: card__footer */
+.card__footer {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* ELEMENT: card__sender */
+.card__sender {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Keyframes для анімації мерехтіння */
+@keyframes twinkle {
+    from { opacity: 0.5; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
